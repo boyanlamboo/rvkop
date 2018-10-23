@@ -1,0 +1,50 @@
+body {
+  position: relative;
+  padding-top: 65px;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* navbar */
+.navbar {
+  background-color: transparent;
+}
+
+.nav-link {
+  color: #000000;
+}
+
+.nav-link.active {
+  color: red !important;
+}
+
+/* SECTION WIE BEN IK */
+.col {
+  border: 1px solid red;
+}
+
+/* SECTION DIENSTEN */
+.container-image {
+  width: 100%;
+  height: 500px;
+  background-image: url('https://via.placeholder.com/1200x600');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.quote-box {
+	border: 1px solid blue;
+	height: 350px;
+	display: flex;
+	align-items: center;
+	color: #ffffff;
+	background-color: #000000;
+}
+
+/* SECTION: OPDRACHTGEVERS */
+.w-100 {
+	margin: 12px 0px 12px 0px;
+}
