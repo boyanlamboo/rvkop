@@ -1,33 +1,168 @@
+/*html.sr .load-hidden {
+	visibility: hidden;
+}*/
+
 body {
+	background-color: #ffffff;
   position: relative;
-  padding-top: 65px;
+  padding-top: 96px;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden !important;
+}
+
+/* GENERAL STYLES */
+.title {
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+.title-main {
+	font-weight: 500;
+	letter-spacing: 4.5px;
+	line-height: 54px;
+	font-size: 36px;
+	padding-bottom: 24px;
+	margin: 0;
+}
+
+.title-pre {
+	font-weight: 600;
+	letter-spacing: 2.2px;
+	line-height: 21px;
+	font-size: 14px;
+	color: #F2C204;
+	padding-bottom: 6px;
+	margin: 0;
+}
+
+.title-medium {
+	max-width: 480px;
+	font-weight: 500;
+	letter-spacing: 2.9px;
+	line-height: 30px;
+}
+
+.title-small {
+  font-weight: 500;
+	letter-spacing: 2.4px;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+.title-white {
+	color: #ffffff;
+}
+
+.job-role {
+	font-weight: 400;
+	letter-spacing: 2.4px;
+	line-height: 30px;
+	font-size: 20px;
+	text-transform: none;
+}
+
+.text-block {
+	max-width: 480px;
+	text-align: justify;
+	font-family: 'Quattrocento', serif;
+	letter-spacing: 2px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #000000;
+}
+
+.bg-text {
+	color: #9b9b9b;
+}
+
+hr {
+	margin: 144px 0px;
+}
+
+.button-main {
+	border-radius: 0;
+	border-color: #F2C204;
+	color: #F2C204;
+	font-family: 'Oswald', sans-serif;
+	padding: 6px 18px;
+}
+
+.button-main:hover {
+	background-color: #F2C204;
+	color: #000000;
+	transition: 0.35s ease-in-out;
+}
+
+.col-space-down,
+.row-space-down {
+	margin-bottom: 144px;
+}
+
+.row-space-down-small {
+	margin-bottom: 72px;
+}
+
+.col-space-down-small {
+	margin-bottom: 24px;
+}
+
+.col-space-up {
+	margin-top: 72px;
 }
 
 /* navbar */
 .navbar {
-  background-color: transparent;
+  background-color: #ffffff;
+	height: 96px;
+}
+
+.nav-wrapper {
+	background-color: #ffffff !important;
+}
+
+#navbar {
+	transition: top 0.35s ease-out;
 }
 
 .nav-link {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1.7px;
+	line-height: 21px;
+	font-size: 14px;
   color: #000000;
+	margin-left: 24px;
+	margin-right: 0;
+	padding-right: 0 !important;
 }
 
-.nav-link.active {
-  color: red !important;
+.nav-link.active,
+.nav-link:hover {
+  color: #F2C204;
 }
 
 /* SECTION WIE BEN IK */
-.col {
-  border: 1px solid red;
+
+.main-photo {
+	background-image: url(../img/rob-van-kampen-main-photo.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 650px;
+	width: 480px;
+}
+
+#section-wie-ben-ik {
+	position: absolute;
+	top: -96px;
 }
 
 /* SECTION DIENSTEN */
 .container-image {
   width: 100%;
-  height: 500px;
-  background-image: url('https://via.placeholder.com/1200x600');
+  height: 50vh;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -35,16 +170,162 @@ body {
   background-size: cover;
 }
 
+#dag-start {
+	background-image: url(../img/rob-dagstart.png);
+	background-position: center;
+}
+
+#presentatie {
+	background-image: url(../img/rob-presenteert.png);
+	background-position: center;
+}
+
+.quote-col {
+	display: flex;
+	align-items: center;
+}
+
 .quote-box {
-	border: 1px solid blue;
 	height: 350px;
 	display: flex;
 	align-items: center;
+	text-align: center;
 	color: #ffffff;
 	background-color: #000000;
+	position: relative;
+}
+
+.quote-box:before { 
+  content: "";
+  position: absolute;
+  bottom: 0; /* this pulls the shadow down */
+  width: 75%; /*less with than the original div, this makes the shadow more natural */
+  left: 40px; /* Just a center spacer, 200 - 175 = 50 / 2 = 25 */
+  height: 75px;
+  background: transparent;
+  -webkit-box-shadow: 0px 4px 50px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 4px 50px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 4px 50px 0px rgba(0,0,0,0.35);
+  z-index: -1; /*this is truly important, as we want to move the psuedo below the parent for this effect to work well */
 }
 
 /* SECTION: OPDRACHTGEVERS */
 .w-100 {
 	margin: 12px 0px 12px 0px;
+}
+
+.brand-item {
+	height: 70px;
+	width: 180px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+		/* BRAND SLIDER */
+		.scrolling-flexbox {
+			display: flex;
+			flex-wrap: nowrap;
+			overflow-x: auto;
+		}
+
+		.brand-item-slider {
+			height: 70px;
+			width: 180px;
+			flex: 0 0 auto;
+			margin-right: 24px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+/* SECTION: CARRIERE */
+
+blockquote > p {
+	font-family: 'Quattrocento', serif;
+	font-size: 1.2em;
+	margin-bottom: 0;
+	margin-top: 16px;
+}
+
+.media img {
+	height: 120px;
+	width: 120px;
+}
+
+/* SECTION: CONTACT */
+.form-group {
+	font-family: 'Quattrocento', serif; 
+	color: #F2C204;
+}
+
+.form-control {
+	border-radius: 0;
+}
+
+.form-control:focus {
+  border-color: #F2C204;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+	font-weight: 400;
+	color: #9b9b9b;
+	opacity: 1; /*firefox fix, might be deprecated tho*/
+}
+
+.linkedin-button {
+	border-radius: 0;
+	border-color: #0077B5;
+	color: #0077B5;
+	font-family: 'Oswald', sans-serif;
+}
+
+.linkedin-button:hover {
+	border-color: #0077B5;
+	background-color: #0077B5;
+	transition: 0.35s ease-in-out;
+}
+
+.linkedin-button:hover i {
+	color: #ffffff;
+	transition: 0.35s ease-in-out;
+}
+
+.linkedin-button i {
+	color: #0077B5;
+	padding: 12px;
+	font-size: 1.2em;
+}
+
+/* SECTION: FOOTER */
+.footer {
+	padding: 144px 0px;
+}
+
+.line-spacer {
+	margin: 24px 0px;
+}
+
+.line-spacer-double {
+	margin: 48px 0px;
+}
+
+.container-fluid-footer {
+	background-color: #0D0D0D;
+}
+
+.container-fluid-footer .text-block {
+	color: #ffffff;
+}
+
+/* SECTION: CLOSER */
+.closer .row {
+	margin: 0 auto;
+}
+
+.closer-title {
+	font-family: 'Oswald', sans-serif;
+	margin: 24px 0px;
+	font-size: 14px;
 }
